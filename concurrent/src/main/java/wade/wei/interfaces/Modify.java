@@ -9,7 +9,7 @@ import java.util.List;
 public interface Modify<T> {
     /**
      * 用于变化逻辑的传递
-     * @param args
+     * @param t
      */
-    void modify(T... args);
+    void modify(T t);
 }

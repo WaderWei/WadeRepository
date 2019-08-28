@@ -1,14 +1,15 @@
-package wade.wei.concurrent_1;
+package wade.wei.concurrent1;
 
 import lombok.extern.slf4j.Slf4j;
 import wade.wei.template.ConcurrentTestTemplate;
 
 /**
  * @author Administrator
- * 计数
+ * 计数,线程不安全
  */
 @Slf4j
 public class CountExample1 {
+
     private static int count = 0;
 
 

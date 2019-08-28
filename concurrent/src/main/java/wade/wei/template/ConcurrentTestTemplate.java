@@ -78,6 +78,14 @@ public class ConcurrentTestTemplate {
      */
     private final static RejectedExecutionHandler HANDLER = new ThreadPoolExecutor.CallerRunsPolicy();
 
+    /**
+     * 信号量，Semaphore可以阻塞进程并且控制同时访问的线程个数，
+     * 通过 acquire() 获取一个许可，如果没有就等待，
+     * 而 release() 释放一个许可。Semaphore其实和锁有点类似，它一般用于控制对某组资源的访问权限。
+     *
+     * Semaphore适合控制并发数
+     * CountDownLatch比较适合保证线程执行完后再执行其他处理
+     */
 
     public static void test(Modify<Integer> modify) throws InterruptedException {
         ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(CORE_POOL_SIZE, MAX_POOL_SIZE, KEEP_ALIVE_TIME, TIME_UNIT, BLOCKING_QUEUE, THREAD_FACTORY, HANDLER);
