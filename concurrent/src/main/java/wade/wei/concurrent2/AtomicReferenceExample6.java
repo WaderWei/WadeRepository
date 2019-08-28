@@ -4,6 +4,7 @@ import lombok.extern.slf4j.Slf4j;
 import wade.wei.entity.Person;
 import wade.wei.template.ConcurrentTestTemplate;
 
+import java.util.concurrent.atomic.AtomicIntegerFieldUpdater;
 import java.util.concurrent.atomic.AtomicReference;
 
 /**
@@ -14,7 +15,6 @@ import java.util.concurrent.atomic.AtomicReference;
  * AtomicReference  不能保证对象中若存在属性值修改是线程安全的，
  * 如假设引用对象是person，修改person中name和age，多个线程同时从引用中获得对象，
  * 并进行修改，会出现线程不安全情况。
- * 下面我们通过代码来验证一下这条结论
  */
 @Slf4j
 public class AtomicReferenceExample6 {
@@ -29,6 +29,5 @@ public class AtomicReferenceExample6 {
     private static void modify(int i) {
         atomicReference.get().setField1(atomicReference.get().getField1() + i);
         atomicReference.get().setField2(atomicReference.get().getField2() + i);
-
     }
 }
