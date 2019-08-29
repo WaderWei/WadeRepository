@@ -1,10 +1,8 @@
-package wade.wei.concurrent2;
+package wade.wei.example.atomic;
 
 import lombok.extern.slf4j.Slf4j;
 import wade.wei.template.ConcurrentTestTemplate;
 
-import java.util.concurrent.atomic.AtomicInteger;
-import java.util.concurrent.atomic.AtomicLong;
 import java.util.concurrent.atomic.LongAdder;
 
 /**

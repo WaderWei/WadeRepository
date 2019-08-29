@@ -1,4 +1,4 @@
-package wade.wei.concurrent1;
+package wade.wei.example.unsafe;
 
 import lombok.extern.slf4j.Slf4j;
 import wade.wei.template.ConcurrentTestTemplate;

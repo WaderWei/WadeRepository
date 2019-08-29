@@ -1,10 +1,9 @@
-package wade.wei.concurrent2;
+package wade.wei.example.atomic;
 
 import lombok.extern.slf4j.Slf4j;
 import wade.wei.entity.Person;
 import wade.wei.template.ConcurrentTestTemplate;
 
-import java.util.concurrent.atomic.AtomicIntegerFieldUpdater;
 import java.util.concurrent.atomic.AtomicReference;
 
 /**
