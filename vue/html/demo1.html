@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>demo1</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+<div id="app">
+    {{message}}
+    <span v-bind:title="time">
+        查看title
+    </span>
+    <div style="background: red;width: 200px;height: 20px;margin: 10px" v-if="seen" v-for="(item,index) in counts">
+        {{item}}---{{index}}
+    </div>
+
+    <ul>
+        <li v-for="(item,index) in objects">
+            {{item.name}}-----{{item.price}}----{{item.num}}
+        </li>
+    </ul>
+
+    <hr/>
+    <p>{{message}}</p>
+    <button v-on:click="reverseMessage">reverseMessage</button>
+
+    <input type="text" v-model="message"/>
+
+    <hr/>
+    <h3>组件</h3>
+    <ol>
+        <todo-item v-for="item in objects" v-bind:todo="item" v-bind:key="item.name"></todo-item>
+    </ol>
+</div>
+<script>
+    Vue.component('todo-item', {
+        props: ['todo'],
+        template: `<li>{{ todo.name }}</li>`
+    });
+    var app = new Vue({
+        el: "#app",
+        data() {
+            return {
+                message: "hello",
+                time: "时间：" + new Date().toLocaleDateString(),
+                seen: true,
+                counts: [1, 2, 3, 4],
+                objects:
+                    [
+                        {name: "java", price: 100, num: 20},
+                        {name: "net", price: 10, num: 20},
+                        {name: "c", price: 100, num: 50}
+                    ]
+            }
+        },
+        methods: {
+            reverseMessage: function () {
+                return this.message = this.message.split('').reverse().join('');
+            }
+        }
+    });
+</script>
+</body>
+</html>

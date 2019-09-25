@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .loading {
+            height: 100%;
+            width: 100%;
+            position: fixed;
+            background: aliceblue;
+            top: 0;
+            left: 0;
+            z-index: 100;
+        }
+
+        .loading .pic {
+            width: 200px;
+            height: 200px;
+            /*background: url("chi.gif") no-repeat;*/
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            margin: auto;
+        }
+    </style>
+    <style type="text/css">@keyframes lds-ball {
+                               0%, 100% {
+                                   animation-timing-function: cubic-bezier(0.45, 0, 0.9, 0.55);
+                               }
+                               0% {
+                                   -webkit-transform: translate(0, 0);
+                                   transform: translate(0, 0);
+                               }
+                               50% {
+                                   -webkit-transform: translate(0, 108px);
+                                   transform: translate(0, 108px);
+                                   animation-timing-function: cubic-bezier(0, 0.45, 0.55, 0.9);
+                               }
+                               100% {
+                                   -webkit-transform: translate(0, 0);
+                                   transform: translate(0, 0);
+                               }
+                           }
+
+
+    @-webkit-keyframes lds-ball {
+        0%, 100% {
+            animation-timing-function: cubic-bezier(0.45, 0, 0.9, 0.55);
+        }
+        0% {
+            -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
+        }
+        50% {
+            -webkit-transform: translate(0, 108px);
+            transform: translate(0, 108px);
+            animation-timing-function: cubic-bezier(0, 0.45, 0.55, 0.9);
+        }
+        100% {
+            -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
+        }
+    }
+
+    .lds-ball {
+        position: relative;
+    }
+
+    .lds-ball div {
+        position: absolute;
+        width: 52px;
+        height: 52px;
+        border-radius: 50%;
+        background: #eca611;
+        left: 74px;
+        top: 20px;
+        -webkit-animation: lds-ball 1s linear infinite;
+        animation: lds-ball 1s linear infinite;
+    }
+
+    .lds-ball {
+        width: 200px !important;
+        height: 200px !important;
+        -webkit-transform: translate(-100px, -100px) scale(1) translate(100px, 100px);
+        transform: translate(-100px, -100px) scale(1) translate(100px, 100px);
+    }
+        .pre{
+
+        }
+    </style>
+    <script src="../javascript/js/jquery-3.4.1.min.js"></script>
+    <script>
+        /*$(function () {
+            setInterval(function () {
+                $(".loading").fadeOut();
+            },3000)
+        })*/
+        /*页面加载改变事件*/
+       /* document.onreadystatechange = function () {
+            console.log(document.readyState)
+            if (document.readyState == "complete") {
+
+                $(".loading").fadeOut();
+            }
+        }*/
+
+        var img = $("img");//首先获取所有的Img对象
+        var num = 0;//定义一个变量，赋值给b标签用
+        img.each(function(i){//遍历获取到的所有img
+            var oImg = new Image();//new一个新对象
+            oImg.onload = function(){//使用onload方法，在加载完成后执行
+                oImg.onload = null;//首先清除掉缓存
+                num++;//每次加载的过程中num++，即执行次数
+                $(".pre").html(parseInt(num/$("img").size()*100)+"%");//改变b标签的内容，用num除以img的个数，再乘以100，再取整，这就是加载的百分数
+                if(num >= i){
+                    $(".loading").fadeOut();//当num的值大于等于个数时隐藏
+                }
+            }
+            oImg.src = img[i].src;//预加载，先指定一个img.src，当onload成功以后可以将数据指定到某一个元素或者图片上，或者返回一个结果
+        })
+
+    </script>
+</head>
+<body>
+<div class="loading">
+    <div class="pic">
+        <div class="lds-css ng-scope">
+            <div style="width:100%;height:100%" class="lds-ball">
+                <div class="pre">0%</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<p> 1.document.onreadystatechange 页面加载状态改变时的事件
+    2.document.readyState 页面当前文档的状态
+    1）.uninitialized 还未开始载入
+    2）.loading 载入中
+    3）.interactive 已加载，文档和永和可以开始交互
+    4）.complete 载入完成</p>
+<img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1536779145193&di=88f99c68903b47c4e386755b73893335&imgtype=0&src=http%3A%2F%2Fimg.pconline.com.cn%2Fimages%2Fupload%2Fupc%2Ftx%2Fwallpaper%2F1212%2F21%2Fc2%2F16781720_1356079420979.jpg"
+     alt=""/>
+<img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1536779184701&di=f3ab80235c5ddf5adb9d6b06ce47e82c&imgtype=0&src=http%3A%2F%2Fattachments.gfan.com%2Fforum%2Fattachments2%2Fday_110730%2F110730052814920f360299a915.jpg"
+     alt="">
+<img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1536779211730&di=4c244c8bd60f74b1832625e27c063fc0&imgtype=0&src=http%3A%2F%2Fi3.download.fd.pchome.net%2Ft_960x600%2Fg1%2FM00%2F09%2F12%2FoYYBAFO6NYCIE0tSAAdYOvon7RoAABtkwF4hgIAB1hS650.jpg"
+     alt="">
+<img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1536779225935&di=4c13b2276bbe03877d4c5ea0cc56cc98&imgtype=0&src=http%3A%2F%2Fc15.eoemarket.net%2Fapp0%2F652%2F652549%2Fscreen%2F3260012.png"
+     alt="">
+<img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1536779271901&di=3ccda1af260cf969189de3f52ea31686&imgtype=0&src=http%3A%2F%2Fpic1.ytqmx.com%3A82%2F2015%2F0526%2F14%2F02.jpg%2521720.jpg"
+     alt="">
+<img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1536779311038&di=0599243d4fe87313ed37ee416cd73d6a&imgtype=0&src=http%3A%2F%2Fwww.desktx.cc%2Fd%2Ffile%2Fwallpaper%2Fscenery%2F20170105%2F2647448be73294d17c28d91407661f8c.jpg"
+     alt="">
+<img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1536779320074&di=ec9d10c18c21daec3b89b5573c22ef0f&imgtype=0&src=http%3A%2F%2Fpicture.ik123.com%2Fuploads%2Fallimg%2F170320%2F3-1F320150H5.jpg"
+     alt="">
+<img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1536779349967&di=11eaaee20a3da68abf58938bdad012e0&imgtype=0&src=http%3A%2F%2Fpic1.win4000.com%2Fwallpaper%2F2017-11-29%2F5a1e13119deee.jpg"
+     alt="">
+</body>
+</html>

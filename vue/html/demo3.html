@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <p>{{message}}</p>
+</div>
+</body>
+<script>
+    const vm = new Vue({
+        el:'#app',
+        data() {
+            return {
+                message: 1,
+            }
+        },
+        created: function () {
+            alert(this.message);
+        }
+    });
+</script>
+</html>

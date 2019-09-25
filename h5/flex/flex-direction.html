@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>flex容器（父级）flex-direction:改变主轴的方向</title>
+    <style type="text/css">
+        .flexTest{
+            display: flex;
+            display: -webkit-flex;/* Safari */
+            flex-direction: column-reverse/*column*//*row-reverse*//*row*/;/*默认*/
+        }
+        .flexItem{
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+            background: darkgray;
+        }
+    </style>
+</head>
+<body>
+    <div class="flexTest">
+        <div class="flexItem">1</div>
+        <div class="flexItem">2</div>
+        <div class="flexItem">3</div>
+        <div class="flexItem">4</div>
+    </div>
+</body>
+</html>

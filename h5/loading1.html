@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .loading{
+            height: 100%;
+            width: 100%;
+            position: fixed;
+            background: aliceblue;
+            top: 0;
+            left: 0;
+            z-index: 100;
+        }
+        .loading .pic{
+            width: 200px;
+            height: 200px;
+            background: url("chi.gif") no-repeat;
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            margin: auto;
+        }
+    </style>
+    <script src="../javascript/js/jquery-3.4.1.min.js"></script>
+    <script>
+        $(function () {
+            setInterval(function () {
+                $(".loading").fadeOut();
+            },3000)
+        })
+    </script>
+</head>
+<body>
+<div class="loading">
+    <div class="pic"></div>
+</div>
+<p>使用定时器的方法（不会判断页面加载，只是在定时器完成之后将也面显示出来）</p>
+<img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1536779145193&di=88f99c68903b47c4e386755b73893335&imgtype=0&src=http%3A%2F%2Fimg.pconline.com.cn%2Fimages%2Fupload%2Fupc%2Ftx%2Fwallpaper%2F1212%2F21%2Fc2%2F16781720_1356079420979.jpg" alt=""/>
+<img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1536779184701&di=f3ab80235c5ddf5adb9d6b06ce47e82c&imgtype=0&src=http%3A%2F%2Fattachments.gfan.com%2Fforum%2Fattachments2%2Fday_110730%2F110730052814920f360299a915.jpg" alt="">
+<img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1536779211730&di=4c244c8bd60f74b1832625e27c063fc0&imgtype=0&src=http%3A%2F%2Fi3.download.fd.pchome.net%2Ft_960x600%2Fg1%2FM00%2F09%2F12%2FoYYBAFO6NYCIE0tSAAdYOvon7RoAABtkwF4hgIAB1hS650.jpg" alt="">
+<img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1536779225935&di=4c13b2276bbe03877d4c5ea0cc56cc98&imgtype=0&src=http%3A%2F%2Fc15.eoemarket.net%2Fapp0%2F652%2F652549%2Fscreen%2F3260012.png" alt="">
+<img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1536779271901&di=3ccda1af260cf969189de3f52ea31686&imgtype=0&src=http%3A%2F%2Fpic1.ytqmx.com%3A82%2F2015%2F0526%2F14%2F02.jpg%2521720.jpg" alt="">
+<img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1536779311038&di=0599243d4fe87313ed37ee416cd73d6a&imgtype=0&src=http%3A%2F%2Fwww.desktx.cc%2Fd%2Ffile%2Fwallpaper%2Fscenery%2F20170105%2F2647448be73294d17c28d91407661f8c.jpg" alt="">
+<img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1536779320074&di=ec9d10c18c21daec3b89b5573c22ef0f&imgtype=0&src=http%3A%2F%2Fpicture.ik123.com%2Fuploads%2Fallimg%2F170320%2F3-1F320150H5.jpg" alt="">
+<img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1536779349967&di=11eaaee20a3da68abf58938bdad012e0&imgtype=0&src=http%3A%2F%2Fpic1.win4000.com%2Fwallpaper%2F2017-11-29%2F5a1e13119deee.jpg" alt="">
+</body>
+</html>

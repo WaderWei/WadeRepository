@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p>计数:
+    <output id="result"></output>
+</p>
+<button onclick="startWorker()">开始 Worker</button>
+<button onclick="stopWorker()">停止 Worker</button>
+<br/><br/>
+
+<script>
+    let w;
+
+    function startWorker() {
+        if (typeof (Worker) !== "undefined") {
+            w = new Worker("demo_workers.js");
+            w.onmessage = function (event) {
+
+                document.getElementById("result").innerHTML = event.data;
+            };
+        } else {
+            document.getElementById("result").innerHTML = "Sorry, your browser does not support Web Workers...";
+        }
+    }
+
+    function stopWorker() {
+        w.postMessage('close');
+        //w.terminate();
+    }
+</script>
+</body>
+</html>

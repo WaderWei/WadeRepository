@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Title</title>
+    <style>
+        .active {
+            background: green;
+            width: 100px;
+            height: 100px;
+        }
+
+        .text-danger {
+            background: red;
+            width: 100px;
+            height: 100px;
+        }
+
+        .divcss5 {
+            border: 1px solid #00F;
+            height: 120px;
+            width: 200px;
+            word-wrap: break-word
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+
+    <input style='border: 3px solid black;'  class='answer' placeholder='输入答案' name='answer'  onclick='_page_.clickBomb(this)'/>
+    <div this>{{df}}</div>
+    <!--<div :class="{ active: isActive, 'text-danger': hasError}">
+
+    </div>
+    <div :style="selfStyle">
+        fdsfsdfsdf
+    </div>-->
+</div>
+</body>
+<script>
+    const vm = new Vue({
+        el: '#app',
+        data() {
+            return {
+                isActive: true,
+
+                }
+            }
+        }
+    });
+</script>
+</html>

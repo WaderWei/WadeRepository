@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- 手机端适配 -->
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no;" name="viewport" />
+    <!-- 必须依赖jquery -->
+    <script type="text/javascript" src="../js/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="../js/msgBox.js"></script>
+</head>
+<body>
+<input id="add" type="button" value="添加">
+<input id="update" type="button" value="修改">
+
+
+<script type="text/javascript">
+    $(function(){
+        $("#add").bind("click", function() {
+            $.MsgBox.Alert("提示", "哈哈，添加成功！");
+        });
+
+        //回调函数可以直接写方法function(){alert("你点击了确定,重新进行认证");}
+        function test() {
+            alert("你点击了确定,重新进行认证");
+        }
+        //也可以传方法名 test
+        $("#update").bind("click", function() {
+            $.MsgBox.Confirm("温馨提示", "确定要进行修改吗？", test);
+        });
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>flex容器（父级）flex-wrap:设置子项目的换行方式</title>
+    <style type="text/css">
+        .flexTest{
+            display: -webkit-flex;/* Safari */
+            display: flex;
+           /* flex-wrap: wrap!*nowrap默认*!!*wrap-reverse*!;*/
+            /*justify-content: space-around;*//*子项目在主轴上的对象方式*/
+           /* width: 300px;*/
+            height: 500px;
+            /*align-items: flex-start;*/
+           /* flex-wrap: wrap;*/
+           /* align-content: space-between;*/
+
+        }
+        .flexItem{
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+            background: darkgray;
+        }
+        .flexItem1{
+            order: 4;
+            align-self: flex-start;
+
+        }
+        .flexItem2{
+            order:3;
+            align-self: center;
+        }
+        .flexItem3{
+            order: 2;
+            flex-grow: 2;
+            align-self: stretch;
+        }
+        .flexItem4{
+            order: 1;
+            align-self: flex-end;
+        }
+    </style>
+</head>
+<body>
+    <div class="flexTest">
+        <div class="flexItem flexItem1">1</div>
+        <div class="flexItem flexItem2">2</div>
+        <div class="flexItem flexItem3">3</div>
+        <div class="flexItem flexItem4">4</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,17 @@
+CACHE MANIFEST
+# 井号用来注释
+# CACHE表示需要缓存的文件
+# CACHE不支持  * 号
+# version 1.1
+CACHE:
+test/about_pic_02.png
+test/about_pic_01.png
+test/about_pic_03.png
+# NETWORK 表示不缓存的文件，离线时是不可用的
+NETWORK:
+*
+# * 可以使用星号来指示所有其他资源/文件都需要因特网连接：
+
+# FALLBACK 规定如果无法建立因特网连接，则用 "404.html" 替代 /html5/ 目录中的所有文件：
+FALLBACK:
+/404.html
